@@ -11,9 +11,17 @@ include_directories(${Boost_INCLUDE_DIRS})
 
 include_directories(src/Interpreter)
 
+file(GLOB HEADERS "src/Interpreter/*.hpp")
 file(GLOB SOURCES "src/Interpreter/*.cpp")
 
-set (CMAKE_CXX_STANDARD 14)
-add_executable( ${PROJECT_NAME} ./src/main.cpp )
+set (INCLUDE_DIRS "")
+foreach (_headerFile ${HEADERS})
+    get_filename_component(_dir ${_headerFile} PATH)
+    list (APPEND INCLUDE_DIRS ${_dir})
+endforeach()
+list(REMOVE_DUPLICATES INCLUDE_DIRS)
 
-target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
+set (CMAKE_CXX_STANDARD 14)
+add_executable( ${PROJECT_NAME} ./src/main.cpp ${SOURCES}) 
+
+target_link_libraries(${PROJECT_NAME} ${INCLUDE_DIRS} ${Boost_LIBRARIES})

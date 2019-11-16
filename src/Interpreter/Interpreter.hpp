@@ -2,6 +2,7 @@
 #define INTERPRETER_INTERPRETER_HPP
 
 #include <memory>
+#include <iostream>
 
 class Interpreter {
 public: 
