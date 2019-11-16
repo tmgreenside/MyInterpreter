@@ -1,0 +1,4 @@
+set(PROJECT_NAME MyInterpreter)
+set(VERSION_MAJOR   0)
+set(VERSION_MINOR   0)
+set(VERSION_PATH    0)
