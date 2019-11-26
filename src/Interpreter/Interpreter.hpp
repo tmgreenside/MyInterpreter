@@ -11,9 +11,6 @@ public:
     Interpreter(const Interpreter &interpreter) = delete;
     Interpreter operator=(const Interpreter &interpreter) = delete;
     ~Interpreter();
-private:
-    struct Impl;
-    std::unique_ptr<Impl> m_p_impl;
 };
 
 #endif
