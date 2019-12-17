@@ -16,6 +16,8 @@ enum Token {
     RCURLBRACKET,
     COMMA,
     NOT,
+    BITAND,
+    BITOR,
     AND,
     OR,
     PLUS,
